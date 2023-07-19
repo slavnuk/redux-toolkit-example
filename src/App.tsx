@@ -3,6 +3,7 @@ import './App.css';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
 import { userSlice } from './store/reducers/UserSlice';
 import { fetchUsers } from './store/reducers/ActionCreators';
+import PostContainer from './components/PostContainer';
 
 function App() {
   const dispatch = useAppDispatch()
@@ -14,9 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      {isLoading && <h1>It's loading...</h1>}
-      {error && <h1>{error}</h1>}
-      {JSON.stringify(users, null, 2)}
+      <PostContainer/>
     </div>
   );
 }
